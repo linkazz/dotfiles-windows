@@ -1,0 +1,6 @@
+_dotfiles/
+aria2/
+.git/
+pulse/
+wezterm/_wezterm
+wezterm/_backups

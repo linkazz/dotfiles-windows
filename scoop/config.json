@@ -1,0 +1,13 @@
+{
+  "debug": true,
+  "show_manifest": true,
+  "last_update": "2023-06-08T19:23:28.3738122+08:00",
+  "cat_style": "full",
+  "aria2-enabled": true,
+  "aria2-warning-enabled": false,
+  "alias": {
+    "ls": "scoop-ls"
+  },
+  "scoop_branch": "master",
+  "scoop_repo": "http://github.com/ScoopInstaller/Scoop"
+}

@@ -1,0 +1,1 @@
+C:/Users/linka/OneDrive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1

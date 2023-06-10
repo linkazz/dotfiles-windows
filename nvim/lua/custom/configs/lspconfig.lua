@@ -5,6 +5,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
+-- golang lsp
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -27,6 +28,7 @@ lspconfig.gopls.setup {
   },
 }
 
+-- js and ts lsp
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -48,6 +50,7 @@ lspconfig.tsserver.setup {
   end,
 }
 
+-- python lsp
 lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -56,20 +59,7 @@ lspconfig.pyright.setup {
   },
 }
 
--- -- import exisiting lspconfig
--- local config = require("plugins.configs.lspconfig")
--- local on_attach = config.on_attach
--- local capabilities = config.capabilities
---
--- -- custom lspconfig
--- local lspconfig = require("lspconfig")
---
--- lspconfig.pyright.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = {"python"},
--- })
---
+-- rust lsp
 -- lspconfig.rust_analyzer.setup({
 --   on_attach = on_attach,
 --   capabilities = capabilities,

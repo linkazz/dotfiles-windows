@@ -80,6 +80,8 @@ M.mason = {
     "autoflake",
     "autopep8",
     "python-lsp-server",
+    -- rust
+    "rust-analyzer",
   },
 }
 

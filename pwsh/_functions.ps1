@@ -4,7 +4,8 @@ function checkFont($font) {
   $families -contains $font
 }
 
-function fzfb { fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' $args }
+# function fzfb { fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' $args }
+function fzfb { fzf --multi --height=50% --margin=2%,2%,2%,2% --layout=reverse-list --border=double --info=inline --pointer='→' --marker='♡' --header='CTRL-c or ESC to quit' --preview 'bat --color=always --style=numbers --theme=gruvbox-dark --line-range=:500 {}' $args }
 Set-Alias f fzfb
 
 # folder bookmarks 

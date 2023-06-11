@@ -1,11 +1,11 @@
----@type ChadrcConfig 
+---@type ChadrcConfig
 local M = {}
 
--- path to overriding themes and highlight files 
+-- path to overriding themes and highlight files
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "tokyonight",
+  theme = "catppuccin",
   theme_toggle = {
     "catppuccin",
     "tokyonight",

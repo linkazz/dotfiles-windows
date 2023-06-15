@@ -14,7 +14,7 @@ Set-Alias la lsd_all
 Set-Alias ll lsd_list
 Set-Alias lla lsd
 
-# open in windows explorer
+# open in explorer
 function xr() {
   explorer $args
 }
@@ -31,11 +31,6 @@ function which ($command) {
   Get-Command -Name $command -ErrorAction SilentlyContinue |
   Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
-# touch cmd for windows
-function crt() {
-  New-Item $args
-}
-Set-Alias touch crt
 
 # change directory and list files
 function C() {
@@ -56,15 +51,17 @@ function rmf() {
   rm -Force $args
 }
 
-# windows symlink
-function New-Link ($path, $target) {
-  New-Item -ItemType SymbolicLink -Path $path -Value $target
-}
+Set-Alias trash Remove-ItemSafely
 
-# alterative to waifu-2x
+# windows symlink
+# function New-Link ($path, $target) {
+#   New-Item -ItemType SymbolicLink -Path $path -Value $target
+# }
+
+# waifu-2x
 Set-Alias w2x waifu2x-ncnn-vulkan
 
-# notepad++ 
+# launch notepad++ 
 function npp {
     param (
         [string]$FilePath = $null
@@ -80,5 +77,10 @@ function npp {
         Write-Host "Notepad++ is not installed on this computer."
     }
 }
+
+
+
+
+
 
 # Set-Alias v fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim

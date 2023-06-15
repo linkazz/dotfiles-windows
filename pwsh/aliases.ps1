@@ -33,7 +33,7 @@ function which ($command) {
 }
 
 # change directory and list files
-function C() {
+function c() {
   $path = $args -join ' '
   Set-Location $path
   ls
@@ -52,11 +52,6 @@ function rmf() {
 }
 
 Set-Alias trash Remove-ItemSafely
-
-# windows symlink
-# function New-Link ($path, $target) {
-#   New-Item -ItemType SymbolicLink -Path $path -Value $target
-# }
 
 # waifu-2x
 Set-Alias w2x waifu2x-ncnn-vulkan
@@ -77,10 +72,6 @@ function npp {
         Write-Host "Notepad++ is not installed on this computer."
     }
 }
-
-
-
-
 
 
 # Set-Alias v fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim

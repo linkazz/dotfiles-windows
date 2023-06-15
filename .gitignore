@@ -4,3 +4,5 @@ aria2/
 pulse/
 wezterm/_wezterm
 wezterm/_backups
+pwsh/profile/Microsoft.Powershell_profile.ps1.backup
+pwsh/defaults.ps1

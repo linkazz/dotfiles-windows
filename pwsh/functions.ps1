@@ -41,36 +41,6 @@ function settings {
     Start-Process ms-settings:
   }
 
-function newLink ($target, $link) {
-	New-Item -ItemType SymbolicLink -Path $link -Value $target
-  }
-set-alias ln newLink
-
-# unix touch in pwsh
-# Remove-Alias touch
-function touch($file) {
-	if ( Test-Path $file ) {
-		Set-FileTime $file
-	} else {
-		New-Item $file -type file
-	}
-}
-
-# looks any process running in the folder/subdirectories (fuser)
-# https://stackoverflow.com/questions/39148304/fuser-equivalent-in-powershell/39148540#39148540
-function fuser($relativeFile){
-  $file = Resolve-Path $relativeFile
-  foreach ( $Process in (Get-Process)) {
-    foreach ( $Module in $Process.Modules) {
-      if ( $Module.FileName -like "$file*" ) {
-        $Process | select id, path
-      }
-    }
-  }
-}
-
-
-
 # ======================================================================================================
 
 # function runRiot {

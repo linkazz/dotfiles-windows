@@ -41,6 +41,10 @@ function settings {
     Start-Process ms-settings:
   }
 
+function reboot {
+	shutdown /r /t 0
+}
+
 # ======================================================================================================
 
 # function runRiot {

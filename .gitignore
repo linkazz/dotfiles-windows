@@ -6,3 +6,6 @@ wezterm/_wezterm
 wezterm/_backups
 pwsh/profile/Microsoft.Powershell_profile.ps1.backup
 pwsh/defaults.ps1
+nvim/lua/core
+nvim/lua/plugins
+

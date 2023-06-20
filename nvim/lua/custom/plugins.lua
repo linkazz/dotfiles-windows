@@ -133,6 +133,33 @@ local plugins = {
     },
     opts = overrides.nvimcmp,
   },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+  {
+    "Wansmer/treesj",
+    keys = {
+      {
+        "<leader>m",
+        "<CMD>TSJToggle<CR>",
+        desc = "Toggle Treesitter Join",
+      },
+    },
+    cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
+    opts = { use_default_keymaps = false },
+  },
+  {
+    "kevinhwang91/nvim-bqf",
+    event = "VeryLazy",
+    opts = {},
+  },
 }
 
 return plugins

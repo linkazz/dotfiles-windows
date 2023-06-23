@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 -- local right_status = require('config.right-status')
 local launch_menu = {}
+
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	table.insert(launch_menu, {
 		label = "PowerShell",
@@ -70,7 +71,7 @@ local config = {
 		{ family = "Symbols NFM", scale = 0.5 },
 		"Noto Color Emoji",
 	}),
-	default_prog = { "pwsh" },
+	default_prog = { "pwsh.exe" },
 
 	font_size = 9,
 	window_background_opacity = 0.95,

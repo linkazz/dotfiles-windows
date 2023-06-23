@@ -1,12 +1,8 @@
-function checkFont($font) {
-  [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") | Out-Null
-  $families = (New-Object System.Drawing.Text.InstalledFontCollection).Families
-  $families -contains $font
-}
+# symbols [♡]
 
 # preview files in directory with fzf 
 function fzfb {
-  fzf --multi --height=50% --margin=2%,2%,2%,2% --layout=reverse-list --border=double --info=inline --pointer='→' --marker='♡' --header='CTRL-c or ESC to quit' --preview 'bat --color=always --style=numbers --theme=gruvbox-dark --line-range=:500 {}' $args
+  fzf --multi --height=50% --margin=2%,2%,2%,2% --layout=reverse-list --border=double --info=inline --ansi --cycle --pointer='→' --marker='☆' --header='ctrl-c or esc to quit' --preview 'bat {}' $args
   }
 Set-Alias f fzfb
 
@@ -45,6 +41,14 @@ function reboot {
 	shutdown /r /t 0
 }
 
+# magic wormhole send
+function whs {
+  wormhole send $args
+}
+function whr {
+  wormhole receive $args
+}
+
 # ======================================================================================================
 
 # function runRiot {
@@ -52,5 +56,11 @@ function reboot {
 # Get-Process -Id (Start-Process "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Riot Games\Riot Client.lnk" -passthru).ID
 #
 # }
-#
+
 # Set-Alias riot runRiot
+
+# function checkFont($font) {
+#   [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") | Out-Null
+#   $families = (New-Object System.Drawing.Text.InstalledFontCollection).Families
+#   $families -contains $font
+# }

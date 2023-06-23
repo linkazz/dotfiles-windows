@@ -9,3 +9,4 @@ pwsh/defaults.ps1
 nvim/lua/core
 nvim/lua/plugins
 
+winutils

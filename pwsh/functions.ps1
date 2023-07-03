@@ -1,4 +1,20 @@
 <#====================================================================
+@ Powershell 
+====================================================================#>
+# add details to tab completion values 
+$s = {
+    param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
+    $services = Get-Service | Where-Object {$_.Status -eq "Running" -and $_.Name -like "$wordToComplete*"}
+    $services | ForEach-Object {
+        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_.Name,
+            $_.Name,
+            "ParameterValue",
+            $_.Name
+    }
+}
+Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -ScriptBlock $s
+
+<#====================================================================
 @ File Hashes
 ====================================================================#>
 # Compute file hashes - useful for checking successful downloads 
@@ -181,6 +197,10 @@ function dev2 {
 function conf {
   Set-Location ~/.config 
   }
+
+function cyberdl {
+  Set-Location -Path "H:\cyberdrop-dl"
+}
 
 function pwshconf {
   Set-Location -Path "$HOME/.config/pwsh" 

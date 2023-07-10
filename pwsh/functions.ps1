@@ -139,6 +139,24 @@ function fzfb {
   }
 Set-Alias f fzfb
 
+function Invoke-FuzzyEdit()
+{
+    $files = fzfb 
+
+    $editor = $env:EDITOR
+    if ($editor -eq $null) {
+        if ($IsWindows) {
+            $editor = 'nvim'
+        } else {
+            $editor = 'code'
+        }
+    }
+    if ($files -ne $null) {
+        Invoke-Expression -Command ("$editor {0}" -f ($files -join ' ')) 
+    }
+}
+Set-Alias -Name fe -Value Invoke-FuzzyEdit
+
 # magic-wormhole
 function whs {
   wormhole send $args

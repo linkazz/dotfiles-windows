@@ -1,0 +1,5 @@
+Get-Process | Sort-Object -Property WS -Descending | Select-First 10
+Get-Service | Sort-Object -Property @{Expression = "Status"; Descending = $true}, @{Expression = "DisplayName"; Descending = $false}
+Get-Content -Path "helloworld.txt" | Sort-Object
+Get-Content -Path "helloworld.txt" | Sort-Object {[int]$_}
+Get-Service | Select-Object -Property Status,StartType,Name | Sort-Object -Property @{Expression = 'Status'; Descending = True}, @{Expression = 'Name'; Descending = False}, @{Expression = 'StartType'; Descending = True}

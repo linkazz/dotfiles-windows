@@ -1,12 +1,12 @@
 _dotfiles/
 aria2/
 .git/
-pulse/
-wezterm/_wezterm
-wezterm/_backups
+wezterm/backups
 pwsh/profile/Microsoft.Powershell_profile.ps1.backup
 pwsh/defaults.ps1
 nvim/lua/core
 nvim/lua/plugins
-
+ooshutup10.cfg
 winutils
+wezterm/_wezterm
+pwsh/test.ps1

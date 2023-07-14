@@ -3,7 +3,24 @@ local term = require("wezterm")
 local M = {}
 
 function M.options(config)
-	local wsl_domains = term.default_wsl_domains()
+	-- local wsl_domains = term.default_wsl_domains()
+	local wsl_domains = {
+		{
+			name = "WSL:Ubuntu-22.04",
+			distribution = "Ubuntu-22.04",
+			username = "splinks",
+			default_cwd = "/home/splinks",
+			default_prog = { "zsh" },
+		},
+		{
+			name = "WSL:Ubuntu-20.04",
+			distribution = "Ubuntu-20.04",
+			username = "splink",
+			default_cwd = "/home/splink",
+			default_prog = { "zsh" },
+		},
+	}
+
 	-- local ssh_domains = term.default_ssh_domains() -- Load SSH Domains from ~/.ssh/config
 
 	-- local extra_ssh = {
@@ -31,7 +48,7 @@ function M.options(config)
 	-- config.ssh_domains = ssh_domains
 
 	-- config.win32_system_backdrop = "Acrylic"
-	config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
+	config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo" }
 	-- config.default_prog = { "C:\\Users\\Administrator\\scoop\\apps\\git\\current\\bin\\bash.exe -li" }
 	-- config.default_gui_startup_args = { "connect", "SSHMUX:192.168.110.182" }
 
@@ -44,22 +61,25 @@ function M.options(config)
 
 	config.launch_menu = {
 		{
+			label = " PowerShell",
+			args = { "pwsh", "-NoLogo" },
+		},
+		{
 			label = " WSL cwd",
 			args = { "wsl" },
 		},
-		-- { label = " Bash", args = { "C:/Program Files/Git/bin/bash.exe", "-li" } },
-		{ label = " PowerShell", args = { "pwsh", "-NoLogo" } },
-		-- { label = " Nushell", args = { "nu" } },
 		{ label = " Cmd", args = { "cmd" } },
 		{
 			label = " NeoVim Config",
 			args = { "pwsh", "-NoExit", "-Command", "cd C:/Users/linka/.config/nvim && nvim" },
-			-- args = { "pwsh", "-NoExit", "-Command", "cd C:/Users/Administrator/AppData/Local/nvim && nvim" },
 		},
 		{
 			label = " Dotfiles",
 			args = { "pwsh", "-NoExit", "-Command", "cd C:/Users/linka/.config && nvim" },
 		},
+		-- { label = " Bash", args = { "C:/Program Files/Git/bin/bash.exe", "-li" } },
+		-- { label = " Ubuntu-20", args = { "wsl.exe -d Ubuntu-20.04" } },
+		-- { label = " Nushell", args = { "nu" } },
 	}
 end
 

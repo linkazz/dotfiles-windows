@@ -35,9 +35,10 @@ M.colors = {
 	surface0 = "#313244",
 	base = "#1e1e2e",
 	mantle = "#181825",
-	-- crust = "rgba(17,17,27,0.618)",
-	crust = "rgba(36,40,59,0.618)",
+	crust = "rgba(17,17,27,0.618)",
+	-- crust = "rgba(36,40,59,0.618)",
 	transparent = "rgba(0,0,0,0)",
+	bg_color = "#283457",
 	tab_active = "#7aa2f7",
 	tab_inactive = "#1f2335",
 	tab_fg = "#a9b1d6",
@@ -45,7 +46,7 @@ M.colors = {
 
 function M.options(config)
 	config.status_update_interval = 1000
-	config.color_scheme = "tokyonight_storm"
+	config.color_scheme = "tokyonight_night"
 
 	config.animation_fps = 240
 	config.max_fps = 240

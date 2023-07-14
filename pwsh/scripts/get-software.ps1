@@ -38,7 +38,7 @@ function Get-Software
         $Scope = @{
             Name = 'Scope'
             Expression = {
-            $Scopes[$_.PSDrive.Name
+            $Scopes[$_.PSDrive.Name]
             }
         }
 

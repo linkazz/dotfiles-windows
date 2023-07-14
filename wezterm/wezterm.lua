@@ -27,7 +27,8 @@ end
 --Startup settings
 term.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window(cmd or {})
-	window:gui_window():set_inner_size(1280, 720)
+	window:gui_window():set_inner_size(1920, 1080)
+	window:gui_window():set_position(960, 420)
 	-- window:gui_window():set_position("main:50%:50%")
 	-- window:maximize()
 	-- pane:split({ direction = "Bottom", size = 0.25 })
